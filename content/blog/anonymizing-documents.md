@@ -13,18 +13,14 @@ lang = "en"
 toc = true
 +++
 
-This blog post is a non-exhaustive summary of how to anonymize documents and
-images. It is intended to be a quick reference guide for those who need to
-share documents or images with others while protecting the privacy of the
-individuals involved.
-
-<!-- more -->
-
 ## Introduction
 
-This is a high-level summary of some techniques that can be used to fingerprint
-(sometimes called "watermark") documents and images. It is not a comprehensive
-guide, and it is not a guarantee of privacy.
+This blog post is a non-exhaustive summary of methods that are commonly used to
+fingerprint (watermark) documents and images, and an introduction to some
+techniques that can be used to defeat them. This is a quick reference guide,
+and is not a guarantee of privacy.
+
+<!-- more -->
 
 {% warning() %}
 Do **not** rely on this post to be a comprehensive guide, especially against
@@ -45,10 +41,10 @@ allow identifying the origin of a document or image:
    the recipient can be identified by the version they receive.
 
 Each of these techniques has its own strengths and weaknesses, and they need
-different mitigations to defeat. Documents may use one, two or even all of
-these techniques together, so it's important to be aware of all of them.
+different mitigations to defeat. Documents or images may use one, two or even
+all of these techniques together, so it's important to be aware of all of them.
 
-## Document Anonymization
+## Document/Image Anonymization
 
 ### Metadata
 
@@ -65,10 +61,10 @@ example, Signal removes the location (and most other metadata) from images, so
 sending a photo to yourself in Signal is an easy way to ensure that basic
 metadata is removed.
 
-A more reliable way to defeat document metadata is to transform the document
-into a different format that does not support metadata. For example, if you're
-trying to anonymize a Word document, printing it out and then scanning it
-again, or taking a photo of the document on a screen, will remove all the
+A more reliable way to defeat document/image metadata is to transform it into a
+different format that does not support metadata. For example, if you're trying
+to anonymize a Word document, printing it out and then scanning it again, or
+taking a photo of a document/image on a monitor or screen, will remove all the
 metadata.
 
 {% tip() %}
@@ -96,23 +92,23 @@ particular technique.
 
 [printer-dots]: https://en.wikipedia.org/wiki/Printer_tracking_dots
 
-In general, the best way to defeat watermarks is to transform the document
-"manually" - if it's a text document, re-type it by hand; if it's an image,
-redraw it by hand. This is not always practical, but it is the most effective
-way to defeat watermarks.
+In general, the best way to defeat watermarks is to transform it "manually" -
+if it's a text document, re-type it by hand; if it's an image, redraw it.  This
+is not always practical, but it is one of the most effective ways to defeat
+watermarks.
 
-There are some techniques that can help here but aren't guaranteed to work;
-stuff like rendering an image in black and white can defeat invisible or
+There are some other techniques that can help here but aren't guaranteed to
+work; things like rendering an image in black and white can defeat invisible or
 low-contrast watermarks, for example, but this doesn't always work and there
 are known ways to bypass this.
 
 ### Different Versions
 
-One of the most effective ways to identify the recipient of a document is to
-send different versions of the document to different recipients. This can be
-done in a variety of ways, such as changing the text slightly, changing the
-spacing between words, the font, and an infinite number of other small
-modifications.
+One of the most effective ways to identify the recipient of a document that is
+shared with others is to send different versions of the document to different
+recipients. This can be done in a variety of ways, such as changing the text
+slightly, changing the spacing between words, the font, and an infinite number
+of other small modifications.
 
 This also doesn't need to be done per-recipient; you can send a different
 version to several groups of recipients, and then see which version is made
