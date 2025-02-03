@@ -1,7 +1,8 @@
 +++
 title = "Anonymizing Documents and Images"
 date = 2025-02-03
-description = "A non-exhaustive summary of how to anonymize documents and images."
+description = """A non-exhaustive summary of watermarking, document fingerprinting,
+and an introduction on how to anonymize documents and images."""
 authors = ["Andrew Dunham"]
 
 [taxonomies]
@@ -19,8 +20,6 @@ This blog post is a non-exhaustive summary of methods that are commonly used to
 fingerprint (watermark) documents and images, and an introduction to some
 techniques that can be used to defeat them. This is a quick reference guide,
 and is not a guarantee of privacy.
-
-<!-- more -->
 
 {% warning() %}
 Do **not** rely on this post to be a comprehensive guide, especially against
