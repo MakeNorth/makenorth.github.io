@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>MakeNorth - preparedness</title>
+      <link>https://makenorth.ca</link>
+      <description>Crafts, home automation, electrification, and emergency preparedness</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://makenorth.ca/tags/preparedness/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sat, 21 Dec 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Printable Emergency Contact List Templates</title>
+          <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+          <author>Andrew Dunham</author>
+          <link>https://makenorth.ca/blog/printable-emergency-contact-list/</link>
+          <guid>https://makenorth.ca/blog/printable-emergency-contact-list/</guid>
+          <description xml:base="https://makenorth.ca/blog/printable-emergency-contact-list/">&lt;p&gt;In an emergency, you don&#x27;t want to have to go hunting for contact information
+for insurance or utilities – and you might also not be the one going looking.
+An up-to-date emergency contact list is a gesture of kindness towards a very
+stressed out version of your future self or potentially a loved one.&lt;&#x2F;p&gt;
+&lt;p&gt;We wrote up two formats for this contact list. We put a copy of the longer
+detailed version on our fridge as well as in the glovebox of each car, and in
+our go bags. The shorter wallet card will fit right in your wallet, perhaps
+next to your health card or insurance card. Both are Google Docs - copy them or
+download them as Word or OpenDocument files, edit with your information, and
+print out as many copies as seems useful.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;docs.google.com&#x2F;document&#x2F;d&#x2F;1PaAHJNsBQ3SBnZV2Re8W01uVzTV93op4s6fxMhJ7Sjc&#x2F;edit&quot;&gt;Emergency Contact List Template - Full Version&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;docs.google.com&#x2F;document&#x2F;d&#x2F;1of8yNKwG4abCtyNWPVH_7_nHfA1UhwawPPjrOvOEUnA&#x2F;edit&quot;&gt;Emergency Contact Wallet Card Template&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s hoping you never need to use them!&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

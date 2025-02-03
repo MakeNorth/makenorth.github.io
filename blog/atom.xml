@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>MakeNorth - MakeNorth - Blog</title>
+    <subtitle>Crafts, home automation, electrification, and emergency preparedness</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://makenorth.ca/blog/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://makenorth.ca/blog/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-02-03T00:00:00+00:00</updated>
+    <id>https://makenorth.ca/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Anonymizing Documents and Images</title>
+        <published>2025-02-03T00:00:00+00:00</published>
+        <updated>2025-02-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Andrew Dunham
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://makenorth.ca/blog/anonymizing-documents/"/>
+        <id>https://makenorth.ca/blog/anonymizing-documents/</id>
+        
+        <content type="html" xml:base="https://makenorth.ca/blog/anonymizing-documents/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;This blog post is a non-exhaustive summary of methods that are commonly used to
+fingerprint (watermark) documents and images, and an introduction to some
+techniques that can be used to defeat them. This is a quick reference guide,
+and is not a guarantee of privacy.&lt;&#x2F;p&gt;
+&lt;blockquote class=&quot;callout warning&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12.865 3.00017L22.3912 19.5002C22.6674 19.9785 22.5035 20.5901 22.0252 20.8662C21.8732 20.954 21.7008 21.0002 21.5252 21.0002H2.47266C1.92037 21.0002 1.47266 20.5525 1.47266 20.0002C1.47266 19.8246 1.51886 19.6522 1.60663 19.5002L11.1329 3.00017C11.4091 2.52187 12.0206 2.358 12.4989 2.63414C12.651 2.72191 12.7772 2.84815 12.865 3.00017ZM4.20471 19.0002H19.7932L11.9989 5.50017L4.20471 19.0002ZM10.9989 16.0002H12.9989V18.0002H10.9989V16.0002ZM10.9989 9.00017H12.9989V14.0002H10.9989V9.00017Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;Do &lt;strong&gt;not&lt;&#x2F;strong&gt; rely on this post to be a comprehensive guide, especially against
+extremely well-resourced actors. This is a quick reference guide and a starting
+point, not a tutorial.&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;&lt;h2 id=&quot;fingerprinting-watermarking-and-document-identification&quot;&gt;Fingerprinting, Watermarking, and Document Identification&lt;a class=&quot;zola-anchor&quot; href=&quot;#fingerprinting-watermarking-and-document-identification&quot; aria-label=&quot;Anchor link for: fingerprinting-watermarking-and-document-identification&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Broadly speaking, there are a few categories of techniques that are used to
+allow identifying the origin of a document or image:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Metadata in the file itself, such as the author or creation date embedded in
+a Word document.&lt;&#x2F;li&gt;
+&lt;li&gt;Watermarks or other embedded information in the file, such as a watermark in
+an image (hidden or otherwise), white-on-white text, etc.&lt;&#x2F;li&gt;
+&lt;li&gt;Sending different versions of the document to different recipients, so that
+the recipient can be identified by the version they receive.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Each of these techniques has its own strengths and weaknesses, and they need
+different mitigations to defeat. Documents or images may use one, two or even
+all of these techniques together, so it&#x27;s important to be aware of all of them.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;document-image-anonymization&quot;&gt;Document&#x2F;Image Anonymization&lt;a class=&quot;zola-anchor&quot; href=&quot;#document-image-anonymization&quot; aria-label=&quot;Anchor link for: document-image-anonymization&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;metadata&quot;&gt;Metadata&lt;a class=&quot;zola-anchor&quot; href=&quot;#metadata&quot; aria-label=&quot;Anchor link for: metadata&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Metadata is information that is stored in the file itself, such as the author,
+creation date, and other information. This information can be used to identify
+the author of a document, the software used to create it, and other
+information.&lt;&#x2F;p&gt;
+&lt;p&gt;A common case of metadata is in images, where the camera model, exposure time,
+and GPS location is embedded in the image file itself. This can be used to
+identify the camera that took the photo, and potentially the location where it
+was taken. Some privacy-focused applications will strip this metadata; for
+example, Signal removes the location (and most other metadata) from images, so
+sending a photo to yourself in Signal is an easy way to ensure that basic
+metadata is removed.&lt;&#x2F;p&gt;
+&lt;p&gt;A more reliable way to defeat document&#x2F;image metadata is to transform it into a
+different format that does not support metadata. For example, if you&#x27;re trying
+to anonymize a Word document, printing it out and then scanning it again, or
+taking a photo of a document&#x2F;image on a monitor or screen, will remove all the
+metadata.&lt;&#x2F;p&gt;
+&lt;blockquote class=&quot;callout tip&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M9.97308 18H11V13H13V18H14.0269C14.1589 16.7984 14.7721 15.8065 15.7676 14.7226C15.8797 14.6006 16.5988 13.8564 16.6841 13.7501C17.5318 12.6931 18 11.385 18 10C18 6.68629 15.3137 4 12 4C8.68629 4 6 6.68629 6 10C6 11.3843 6.46774 12.6917 7.31462 13.7484C7.40004 13.855 8.12081 14.6012 8.23154 14.7218C9.22766 15.8064 9.84103 16.7984 9.97308 18ZM10 20V21H14V20H10ZM5.75395 14.9992C4.65645 13.6297 4 11.8915 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.8925 19.3428 13.6315 18.2443 15.0014C17.624 15.7748 16 17 16 18.5V21C16 22.1046 15.1046 23 14 23H10C8.89543 23 8 22.1046 8 21V18.5C8 17 6.37458 15.7736 5.75395 14.9992Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;If you&#x27;re taking a photo of a screen, make sure to strip the metadata from the
+photo itself! And make sure that there&#x27;s no reflections in the monitor that
+could reveal who took the photo.&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Note that this does &lt;em&gt;not&lt;&#x2F;em&gt; always work if you simply convert one image format to
+another, or one document format to another. For example, converting a Word
+document to a PDF may not remove the metadata.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;watermarks&quot;&gt;Watermarks&lt;a class=&quot;zola-anchor&quot; href=&quot;#watermarks&quot; aria-label=&quot;Anchor link for: watermarks&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Watermarks are information that is embedded in the document itself. You&#x27;ve
+probably seen this in images, where a faint &quot;COPY&quot; is printed across an image,
+or where stock photos have semi-transparent text over top of them so they
+cannot be used without paying for a license.&lt;&#x2F;p&gt;
+&lt;p&gt;This can be done in a variety of ways, from the visible (as mentioned above) to
+more invisible techniques. For example, some printers will print a pattern of
+yellow dots on the page that can be used to identify the printer that printed
+the document; see &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Printer_tracking_dots&quot;&gt;Wikipedia&lt;&#x2F;a&gt; for more information on this
+particular technique.&lt;&#x2F;p&gt;
+&lt;p&gt;In general, the best way to defeat watermarks is to transform it &quot;manually&quot; -
+if it&#x27;s a text document, re-type it by hand; if it&#x27;s an image, redraw it.  This
+is not always practical, but it is one of the most effective ways to defeat
+watermarks.&lt;&#x2F;p&gt;
+&lt;p&gt;There are some other techniques that can help here but aren&#x27;t guaranteed to
+work; things like rendering an image in black and white can defeat invisible or
+low-contrast watermarks, for example, but this doesn&#x27;t always work and there
+are known ways to bypass this.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;different-versions&quot;&gt;Different Versions&lt;a class=&quot;zola-anchor&quot; href=&quot;#different-versions&quot; aria-label=&quot;Anchor link for: different-versions&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;One of the most effective ways to identify the recipient of a document that is
+shared with others is to send different versions of the document to different
+recipients. This can be done in a variety of ways, such as changing the text
+slightly, changing the spacing between words, the font, and an infinite number
+of other small modifications.&lt;&#x2F;p&gt;
+&lt;p&gt;This also doesn&#x27;t need to be done per-recipient; you can send a different
+version to several groups of recipients, and then see which version is made
+available. Then, you can repeat that process with the recipients who received
+that version, and so on until an individual recipient is identified.&lt;&#x2F;p&gt;
+&lt;p&gt;Defeating this technique is difficult, and is best done by obtaining multiple
+copies of the same document from multiple sources, removing all the metadata
+and watermarks as mentioned above (ideally, by re-typing text documents
+entirely to remove formatting and spacing differences), and then comparing the
+documents to see if there are any differences.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;a class=&quot;zola-anchor&quot; href=&quot;#resources&quot; aria-label=&quot;Anchor link for: resources&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;further-reading&quot;&gt;Further Reading&lt;a class=&quot;zola-anchor&quot; href=&quot;#further-reading&quot; aria-label=&quot;Anchor link for: further-reading&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.privacyguides.org&#x2F;en&#x2F;data-redaction&#x2F;&quot;&gt;Data and Metadata Redaction&lt;&#x2F;a&gt;, from Privacy Guides&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.elitefourum.com&#x2F;t&#x2F;many-of-the-pokemon-playtest-cards-were-likely-printed-in-2024&#x2F;52421&quot;&gt;This investigation of Pokemon cards&lt;&#x2F;a&gt;, that uses printer
+dots to make the case that many supposedly early prototype Pokemon cards were
+actually printed in 2024.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;more to come&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;a class=&quot;zola-anchor&quot; href=&quot;#tools&quot; aria-label=&quot;Anchor link for: tools&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;exiftool.org&#x2F;&quot;&gt;ExifTool&lt;&#x2F;a&gt; - A tool for reading and writing metadata in
+images and documents.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Printable Emergency Contact List Templates</title>
+        <published>2024-12-21T00:00:00+00:00</published>
+        <updated>2024-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Andrew Dunham
+          </name>
+        </author>
+        
+        <author>
+          <name>
+            Leigh Honeywell
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://makenorth.ca/blog/printable-emergency-contact-list/"/>
+        <id>https://makenorth.ca/blog/printable-emergency-contact-list/</id>
+        
+        <content type="html" xml:base="https://makenorth.ca/blog/printable-emergency-contact-list/">&lt;p&gt;In an emergency, you don&#x27;t want to have to go hunting for contact information
+for insurance or utilities – and you might also not be the one going looking.
+An up-to-date emergency contact list is a gesture of kindness towards a very
+stressed out version of your future self or potentially a loved one.&lt;&#x2F;p&gt;
+&lt;p&gt;We wrote up two formats for this contact list. We put a copy of the longer
+detailed version on our fridge as well as in the glovebox of each car, and in
+our go bags. The shorter wallet card will fit right in your wallet, perhaps
+next to your health card or insurance card. Both are Google Docs - copy them or
+download them as Word or OpenDocument files, edit with your information, and
+print out as many copies as seems useful.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;docs.google.com&#x2F;document&#x2F;d&#x2F;1PaAHJNsBQ3SBnZV2Re8W01uVzTV93op4s6fxMhJ7Sjc&#x2F;edit&quot;&gt;Emergency Contact List Template - Full Version&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;docs.google.com&#x2F;document&#x2F;d&#x2F;1of8yNKwG4abCtyNWPVH_7_nHfA1UhwawPPjrOvOEUnA&#x2F;edit&quot;&gt;Emergency Contact Wallet Card Template&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s hoping you never need to use them!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Home Solar, Part 2: Definitions and Terms</title>
+        <published>2024-10-28T00:00:00+00:00</published>
+        <updated>2024-10-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Andrew Dunham
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://makenorth.ca/blog/home-solar-pt2/"/>
+        <id>https://makenorth.ca/blog/home-solar-pt2/</id>
+        
+        <summary type="html">&lt;p&gt;This blog post is the second in a series about installing solar panels on our
+house. In this post, we&#x27;ll go over many of the definitions and terms that we
+came across, and try to define them in a way that&#x27;s useful for someone that&#x27;s
+not an electrician or solar installer.&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Home Solar, Part 1: Introduction</title>
+        <published>2024-10-27T00:00:00+00:00</published>
+        <updated>2024-10-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Andrew Dunham
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://makenorth.ca/blog/home-solar-pt1/"/>
+        <id>https://makenorth.ca/blog/home-solar-pt1/</id>
+        
+        <summary type="html">&lt;p&gt;We&#x27;ve just finished a long-running project to install solar panels on our
+house. This is the first of a series of posts about the project, where we aim
+to cover everything from the initial planning to the final installation,
+along with posts on ongoing monitoring, troubleshooting, and lessons learned.&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Hello World</title>
+        <published>2024-10-26T00:00:00+00:00</published>
+        <updated>2024-10-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Andrew Dunham
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://makenorth.ca/blog/hello-world/"/>
+        <id>https://makenorth.ca/blog/hello-world/</id>
+        
+        <content type="html" xml:base="https://makenorth.ca/blog/hello-world/">&lt;p&gt;This is the first post on our new blog. We&#x27;re just getting this new blog going,
+so stay tuned for more. This blog supports &lt;a href=&quot;&#x2F;blog&#x2F;rss.xml&quot;&gt;RSS&lt;&#x2F;a&gt; and
+&lt;a href=&quot;&#x2F;blog&#x2F;atom.xml&quot;&gt;Atom&lt;&#x2F;a&gt; feeds, so if you use a feed reader, you can subscribe to
+make sure you never miss a post.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

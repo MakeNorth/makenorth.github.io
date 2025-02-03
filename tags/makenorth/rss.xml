@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>MakeNorth - makenorth</title>
+      <link>https://makenorth.ca</link>
+      <description>Crafts, home automation, electrification, and emergency preparedness</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://makenorth.ca/tags/makenorth/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Hello World</title>
+          <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+          <author>Andrew Dunham</author>
+          <link>https://makenorth.ca/blog/hello-world/</link>
+          <guid>https://makenorth.ca/blog/hello-world/</guid>
+          <description xml:base="https://makenorth.ca/blog/hello-world/">&lt;p&gt;This is the first post on our new blog. We&#x27;re just getting this new blog going,
+so stay tuned for more. This blog supports &lt;a href=&quot;&#x2F;blog&#x2F;rss.xml&quot;&gt;RSS&lt;&#x2F;a&gt; and
+&lt;a href=&quot;&#x2F;blog&#x2F;atom.xml&quot;&gt;Atom&lt;&#x2F;a&gt; feeds, so if you use a feed reader, you can subscribe to
+make sure you never miss a post.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

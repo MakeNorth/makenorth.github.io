@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  
+  <meta name="description" content="&lt;p&gt;We&#x27;ve just finished a long-running project to install solar panels on our
+house. This is the first of a series of posts about the project, where we aim
+to cover everything from the initial planning to the final installation,
+along with posts on ongoing monitoring, troubleshooting, and lessons learned.&lt;&#x2F;p&gt;
+">
+  
+
+  <title>Home Solar, Part 1: Introduction</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a210;
+    --text-color: #3C4043;
+    --text-pale-color: #94969f;
+    --bg-color: #ffffff; 
+    --highlight-mark-color: #5f75b035;
+  
+    --callout-note-color: #5871a2;
+    --callout-important-color: #8062b0;
+    --callout-warning-color: #936e51;
+    --callout-alert-color: #bc5252;
+    --callout-question-color: #477389;
+    --callout-tip-color: #3c8460;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #5d77ac;
+    --primary-pale-color: #5d77ac20;
+    --text-color: #9197a5;
+    --text-pale-color: #747983;
+    --bg-color: #202124;
+    --highlight-mark-color: #5f75b035;
+
+    --callout-note-color: #5d77ac;
+    --callout-important-color: #8062b0;
+    --callout-warning-color: #936e51;
+    --callout-alert-color: #bc5252;
+    --callout-question-color: #477389;
+    --callout-tip-color: #3c8460;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --icon-size: 20px;
+    --homepage-font-size: 16px;
+    --homepage-line-height: 1.75;
+    --paragraph-font-size: 16px;
+    --paragraph-line-height: 1.75;
+    --aside-font-size: 15px;
+    --img-border-radius: 0px;
+    --callout-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-pale-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = '/hl-dark.css';
+    }
+  </script>
+  
+  
+<header  class="blur" >
+  <div id="header-wrapper">
+    <nav>
+      <a class="instant" href="/">makenorth</a>
+      
+        <button id="toggler" class="separator" aria-label="toggle expand">::</button>
+      
+      
+        <span class="wrap left fold">{</span>
+        
+        
+          
+        
+          
+        
+        
+        
+          
+          
+          <a class="instant " href="&#x2F;blog">blog</a>
+          <span class="wrap-separator fold">,</span>
+        
+          
+          
+            
+          
+          <a class="instant fold" href="&#x2F;links">links</a>
+          <span class="wrap-separator fold">,</span>
+        
+          
+          
+            
+          
+          <a class="instant fold" href="&#x2F;about">about</a>
+          
+        
+        <span class="wrap right fold">} ;</span>
+      
+    </nav>
+    <div id="btns">
+      
+      
+      
+
+      
+      
+      
+        
+      
+      
+      <a id="rss-btn" href="&#x2F;blog&#x2F;atom.xml" aria-label="rss feed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M3 17C5.20914 17 7 18.7909 7 21H3V17ZM3 10C9.07513 10 14 14.9249 14 21H12C12 16.0294 7.97056 12 3 12V10ZM3 3C12.9411 3 21 11.0589 21 21H19C19 12.1634 11.8366 5 3 5V3Z" fill="currentColor"></path></svg></a>
+      
+      
+
+      
+      
+      
+      <button id="theme-toggle" aria-label="theme switch" data-moon-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" data-sun-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+      </button>
+      
+
+      
+      
+      
+      
+      <button id="toc-toggle" aria-label="table of content">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z" fill="currentColor"></path></svg>
+      </button>
+      
+      
+    </div>
+  </div>
+</header>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;makenorth.ca&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;makenorth.ca&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;makenorth.ca&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+    </button>
+  </div>
+</dialog>
+
+
+
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#why-solar">Why Solar?</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#electrification">Electrification</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#power-outages-and-resilience">Power Outages and Resilience</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#electricity-bill-reduction">Electricity Bill Reduction</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#initial-planning">Initial Planning</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#financial-planning">Financial Planning</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#up-next">Up Next</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z" fill="currentColor"></path></svg>
+    </button>
+    
+  </aside>
+  <main>
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;"></div>
+      
+      
+      <article class="prose" data-backlink-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M9.41421 8L18.0208 16.6066L16.6066 18.0208L8 9.41421V17H6V6H17V8H9.41421Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;">
+        <h1>Home Solar, Part 1: Introduction</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">2024-10-27</span>
+            </div>
+
+          
+
+          
+          <div id="tags">
+            <a class="instant" href="https://makenorth.ca/tags/house"><span>#</span>house</a><a class="instant" href="https://makenorth.ca/tags/projects"><span>#</span>projects</a><a class="instant" href="https://makenorth.ca/tags/solar"><span>#</span>solar</a>
+          </div>
+          
+        </div>
+
+        
+        
+
+        
+
+        
+
+        
+          <p>We've just finished a long-running project to install solar panels on our
+house. This is the first of a series of posts about the project, where we aim
+to cover everything from the initial planning to the final installation,
+along with posts on ongoing monitoring, troubleshooting, and lessons learned.</p>
+<span id="continue-reading"></span><h2 id="why-solar">Why Solar?<a class="zola-anchor" href="#why-solar" aria-label="Anchor link for: why-solar" style="visibility: hidden;"></a>
+</h2>
+<p>We've been thinking about installing a solar system for a while, for a few
+reasons, and the combination of these reasons and having some time in our lives
+for projects meant that it made sense for us to do it at the time.
+Additionally, the cost of solar panels had come down significantly at the time
+we began the project.</p>
+<h3 id="electrification">Electrification<a class="zola-anchor" href="#electrification" aria-label="Anchor link for: electrification" style="visibility: hidden;"></a>
+</h3>
+<p>We care about electrification and green energy, and reducing our usage of
+fossil fuels. We've been slowly replacing all of our fossil-fuel powered
+appliances with electrified versions (induction stove, electric hot water
+heater, etc.), so more of our utility costs are electrical vs. from natural
+gas. We also drive an EV, so being able to charge our car with solar power for
+a good part of the year is a bonus.</p>
+<h3 id="power-outages-and-resilience">Power Outages and Resilience<a class="zola-anchor" href="#power-outages-and-resilience" aria-label="Anchor link for: power-outages-and-resilience" style="visibility: hidden;"></a>
+</h3>
+<p>We live in an area with semi-frequent power outages, and we wanted to have a
+system that could keep the lights on and the sump pump running during an
+outage. We'd previously put a generator in, but in May 2022 we experienced a
+power outage that lasted for more than a week, and home standby generators are
+not designed to run continuously for that long. Additionally, the cost of
+natural gas for that week was several hundred dollars, along with the
+maintenance costs of the generator, new spark plugs, oil changes, etc.</p>
+<p>Our house has a sump pump that keeps water out of our basement, and in a very
+heavy rainstorm (or the spring melt), we measured the inflow into our sump pit
+to be on the order of 1L/second of water. At this rate, if the power goes out
+and our sump pump stopped pumping, we'd have less than 15 minutes before our
+basement floods. We also have a backup sump pump, but it's not as powerful as
+the main one, and it's insufficient to keep up with the inflow; it buys us an
+hour or two, but it's not enough to prevent a flood.</p>
+<h3 id="electricity-bill-reduction">Electricity Bill Reduction<a class="zola-anchor" href="#electricity-bill-reduction" aria-label="Anchor link for: electricity-bill-reduction" style="visibility: hidden;"></a>
+</h3>
+<p>We wanted to save money on our electricity bill, and the current rules for net
+metering in Ontario are quite favorable to households with rooftop solar.
+Specifically, any power that you export to the power grid is credited at the
+same rate as the power you import, and you can carry over credits from one
+month to the next. This means that you can effectively "store" power in the
+grid for use in the winter, when your solar panels are producing less power.</p>
+<p>Additionally, <a rel="nofollow noreferrer" href="https://www.hydroone.com/businessservices_/generators_/Documents/OEBStaff-Bulletin-TOU-Option-for-Net-Metered-Customers-20230117.pdf">a recent ruling</a> by the Ontario Energy Board
+required power companies to allow customers that were on a time-of-use plan to
+use net metering, instead of the previous behaviour where customers were forced
+to transition to a tiered plan. Since most time-of-use plans charge a higher
+rate for power during the middle day, when the sun is shining, you're getting
+more value for your solar export.</p>
+<h2 id="initial-planning">Initial Planning<a class="zola-anchor" href="#initial-planning" aria-label="Anchor link for: initial-planning" style="visibility: hidden;"></a>
+</h2>
+<p>When we were planning out our installation, we had a few key principles in
+mind, that we'll cover here:</p>
+<ol>
+<li>
+<p><strong>High Reliability:</strong> We wanted a system that was reliable, with a good
+track record for long-term operation. This means that we weren't interested
+in no-name or re-branded cheaper OEM equipment, and we were willing to pay a
+bit more for a system from a larger brand.</p>
+</li>
+<li>
+<p><strong>No Proprietary Systems:</strong> We wanted to, as much as possible, avoid
+proprietary systems that would lock us into a single vendor for the life of
+the system. This means that we avoided systems like Tesla's Powerwall, and
+instead went with a system that was more modular and could be expanded or
+replaced in the future. Since we knew that we wanted to add battery storage
+after the initial solar installation, we wanted to make sure that the system
+we chose would be compatible with a variety of batteries (more on this
+below).</p>
+</li>
+<li>
+<p><strong>Minimal Single Points of Failure:</strong> We wanted to avoid having a single
+point of failure that would take down the entire system. While we ended up
+compromising somewhat on this particular point, we did our best to minimize
+the number of things that could go wrong and take down the entire system.</p>
+<p>Additionally, we wanted to make sure that if a single component failed, we
+had the ability to bypass it such that the rest of the house wouldn't be
+left without power.</p>
+</li>
+<li>
+<p><strong>No Cloud/Internet:</strong> We didn't want a system that required an internet
+connection to operate, or that required a cloud service to function. In
+addition to the fact that we've been dealing with a flaky internet
+connection at home, both of us work in infosec and have a general distrust
+of cloud services.</p>
+</li>
+<li>
+<p><strong>Easy to Monitor and Troubleshoot:</strong> We wanted a system that was easy to
+monitor and troubleshoot, and that could be integrated into Home Assistant.
+More on this in a later post in this series.</p>
+</li>
+<li>
+<p><strong>Scalable for Future Expansion:</strong> We wanted a system that could be easily
+expanded in the future, for example, if we wanted to add more solar panels
+or a battery system. Since we have future plans to re-do our garage and
+weren't installing solar panels there, we intentionally sized our system to
+be large enough so that we could add more panels in the future without
+needing to buy a new inverter.</p>
+</li>
+<li>
+<p><strong>Battery Storage:</strong> We knew that we wanted to add battery storage to our
+system, even though we weren't planning on doing it at the same time as we
+installed solar panels. This meant that we needed to choose an inverter that
+was compatible with a variety of battery systems (see the "no proprietary
+systems" point), and that we needed to plan for the eventual addition of
+batteries. More on this in a later post in this series.</p>
+</li>
+<li>
+<p><strong>100% Code Compliance:</strong> We wanted to make sure that our system was 100%
+code compliant, which meant installing equipment certified for use in
+Ontario and ensuring that all necessary notifications and inspections were
+filed and completed. While it is technically possible to DIY such an
+installation in Ontario, it's a fair bit of work and we wanted to make sure
+that everything was done correctly, so we worked with a reputable local
+installer.</p>
+</li>
+</ol>
+<p>We used these principles to guide our decision-making process, and we'll
+explain more on this in a later post where we cover the equipment we chose and
+how the equipment met these principles.</p>
+<h3 id="financial-planning">Financial Planning<a class="zola-anchor" href="#financial-planning" aria-label="Anchor link for: financial-planning" style="visibility: hidden;"></a>
+</h3>
+<p>In addition to the principles behind our system, we also made an explicit
+choice to go with a "large" system–specifically, one that made full use of the
+south-facing roof of our (modestly-sized) house. This is very much a decision
+that's specific to the financial situation of every household, but in our case
+we're fortunate enough that we were able to make that choice.</p>
+<p>Depending on your financial situation, you might choose to install a smaller
+system with room for expansion, or apply for grants or loans.</p>
+<p>In general, if you don't care about specific equipment and just want to reduce
+your electricity bill, the best way to do that is to get multiple quotes from
+reputable installers and choose the quote with the lowest cost in terms of
+dollars per watt of solar panels actually installed, ignoring any grants or
+rebates. Make sure that you're comparing apples to apples here; don't compare
+using the theoretical capacity of an inverter. Comparing the actual wattage of
+installed solar panels is comparing the theoretical maximum output of the
+system across all quotes.</p>
+<p>Of course, make sure that you trust the installer; they're responsible for any
+warranty work, so they need to be reliable enough to be around in a few years
+when you need them!</p>
+<p>The cost calculations for batteries are substantially more complex, and we'll
+cover that in a later post in this series.</p>
+<blockquote class="callout note">
+    
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z" fill="currentColor"></path></svg>
+    </div>
+    <div class="content">
+        
+        <p>Some installers will give you a "payback period" for your system, which
+typically includes a lot of assumptions about future electricity prices,
+whether net metering will continue to exist in its current form, and so on.</p>
+<p>It's worth running your own numbers to see what the payback period is for your
+system, and playing around with the assumptions to see what happens in a
+variety of scenarios. However, broadly speaking, most solar equipment comes
+with a warranty of at least 10 years. So, if your payback period is less than 7
+years, you're in a great situation and should almost certainly move ahead. If
+it's between 7-10 years, it's a good investment, but you should probably
+double-check any assumptions. If it's more than 10 years, you should be careful
+to temper your expectations regarding the financial return.</p>
+<p>Additionally, these "payback periods" typically don't include a comparison to
+just putting the money you'd spend in an investment, so if you're solely
+motivated by financial return, you should consider that as well.</p>
+
+    </div>
+</blockquote><h2 id="up-next">Up Next<a class="zola-anchor" href="#up-next" aria-label="Anchor link for: up-next" style="visibility: hidden;"></a>
+</h2>
+<p>In the <a href="https://makenorth.ca/blog/home-solar-pt2/">next part</a> of this series, we'll cover some
+terms and definitions that you might encounter while doing a solar installation
+in Ontario (or elsewhere).  Stay tuned!</p>
+
+        
+      </article>
+
+      
+      
+    </div>
+
+    <footer>
+  <div class="copyright">
+    <p>© 2024 MakeNorth</p>
+
+  </div>
+  
+</footer>
+  </main>
+</div>
+
+  
+<script src="/js/lightense.min.js"></script>
+
+
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

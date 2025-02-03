@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  
+  <meta name="description" content="&lt;p&gt;This blog post is the second in a series about installing solar panels on our
+house. In this post, we&#x27;ll go over many of the definitions and terms that we
+came across, and try to define them in a way that&#x27;s useful for someone that&#x27;s
+not an electrician or solar installer.&lt;&#x2F;p&gt;
+">
+  
+
+  <title>Home Solar, Part 2: Definitions and Terms</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a210;
+    --text-color: #3C4043;
+    --text-pale-color: #94969f;
+    --bg-color: #ffffff; 
+    --highlight-mark-color: #5f75b035;
+  
+    --callout-note-color: #5871a2;
+    --callout-important-color: #8062b0;
+    --callout-warning-color: #936e51;
+    --callout-alert-color: #bc5252;
+    --callout-question-color: #477389;
+    --callout-tip-color: #3c8460;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #5d77ac;
+    --primary-pale-color: #5d77ac20;
+    --text-color: #9197a5;
+    --text-pale-color: #747983;
+    --bg-color: #202124;
+    --highlight-mark-color: #5f75b035;
+
+    --callout-note-color: #5d77ac;
+    --callout-important-color: #8062b0;
+    --callout-warning-color: #936e51;
+    --callout-alert-color: #bc5252;
+    --callout-question-color: #477389;
+    --callout-tip-color: #3c8460;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --icon-size: 20px;
+    --homepage-font-size: 16px;
+    --homepage-line-height: 1.75;
+    --paragraph-font-size: 16px;
+    --paragraph-line-height: 1.75;
+    --aside-font-size: 15px;
+    --img-border-radius: 0px;
+    --callout-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-pale-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = '/hl-dark.css';
+    }
+  </script>
+  
+  
+<header  class="blur" >
+  <div id="header-wrapper">
+    <nav>
+      <a class="instant" href="/">makenorth</a>
+      
+        <button id="toggler" class="separator" aria-label="toggle expand">::</button>
+      
+      
+        <span class="wrap left fold">{</span>
+        
+        
+          
+        
+          
+        
+        
+        
+          
+          
+          <a class="instant " href="&#x2F;blog">blog</a>
+          <span class="wrap-separator fold">,</span>
+        
+          
+          
+            
+          
+          <a class="instant fold" href="&#x2F;links">links</a>
+          <span class="wrap-separator fold">,</span>
+        
+          
+          
+            
+          
+          <a class="instant fold" href="&#x2F;about">about</a>
+          
+        
+        <span class="wrap right fold">} ;</span>
+      
+    </nav>
+    <div id="btns">
+      
+      
+      
+
+      
+      
+      
+        
+      
+      
+      <a id="rss-btn" href="&#x2F;blog&#x2F;atom.xml" aria-label="rss feed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M3 17C5.20914 17 7 18.7909 7 21H3V17ZM3 10C9.07513 10 14 14.9249 14 21H12C12 16.0294 7.97056 12 3 12V10ZM3 3C12.9411 3 21 11.0589 21 21H19C19 12.1634 11.8366 5 3 5V3Z" fill="currentColor"></path></svg></a>
+      
+      
+
+      
+      
+      
+      <button id="theme-toggle" aria-label="theme switch" data-moon-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" data-sun-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+      </button>
+      
+
+      
+      
+      
+      
+      <button id="toc-toggle" aria-label="table of content">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z" fill="currentColor"></path></svg>
+      </button>
+      
+      
+    </div>
+  </div>
+</header>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;makenorth.ca&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;makenorth.ca&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;makenorth.ca&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+    </button>
+  </div>
+</dialog>
+
+
+
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#definitions">Definitions</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#components-and-hardware">Components and Hardware</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#parties">Parties</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#planning-design-and-permits">Planning, Design, and Permits</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#other-terms">Other Terms</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#up-next">Up Next</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z" fill="currentColor"></path></svg>
+    </button>
+    
+  </aside>
+  <main>
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;"></div>
+      
+      
+      <article class="prose" data-backlink-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M9.41421 8L18.0208 16.6066L16.6066 18.0208L8 9.41421V17H6V6H17V8H9.41421Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;">
+        <h1>Home Solar, Part 2: Definitions and Terms</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">2024-10-28</span>
+            </div>
+
+          
+
+          
+          <div id="tags">
+            <a class="instant" href="https://makenorth.ca/tags/house"><span>#</span>house</a><a class="instant" href="https://makenorth.ca/tags/projects"><span>#</span>projects</a><a class="instant" href="https://makenorth.ca/tags/solar"><span>#</span>solar</a>
+          </div>
+          
+        </div>
+
+        
+        
+
+        
+
+        
+
+        
+          <p>This blog post is the second in a series about installing solar panels on our
+house. In this post, we'll go over many of the definitions and terms that we
+came across, and try to define them in a way that's useful for someone that's
+not an electrician or solar installer.</p>
+<span id="continue-reading"></span><h2 id="definitions">Definitions<a class="zola-anchor" href="#definitions" aria-label="Anchor link for: definitions" style="visibility: hidden;"></a>
+</h2>
+<p>While we were planning our installation, we came across a lot of terms that
+and definitions, which we cover here to help you understand the rest of the
+series. We assume that you have a basic understanding of electrical terminology
+like AC vs. DC, volts, amps, watts, etc.</p>
+<p>While many of the terms here are general and helpful when thinking about solar
+installations anywhere, some of them are specific to Ontario or Ottawa, where
+we live.</p>
+<blockquote class="callout tip">
+    
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M9.97308 18H11V13H13V18H14.0269C14.1589 16.7984 14.7721 15.8065 15.7676 14.7226C15.8797 14.6006 16.5988 13.8564 16.6841 13.7501C17.5318 12.6931 18 11.385 18 10C18 6.68629 15.3137 4 12 4C8.68629 4 6 6.68629 6 10C6 11.3843 6.46774 12.6917 7.31462 13.7484C7.40004 13.855 8.12081 14.6012 8.23154 14.7218C9.22766 15.8064 9.84103 16.7984 9.97308 18ZM10 20V21H14V20H10ZM5.75395 14.9992C4.65645 13.6297 4 11.8915 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.8925 19.3428 13.6315 18.2443 15.0014C17.624 15.7748 16 17 16 18.5V21C16 22.1046 15.1046 23 14 23H10C8.89543 23 8 22.1046 8 21V18.5C8 17 6.37458 15.7736 5.75395 14.9992Z" fill="currentColor"></path></svg>
+    </div>
+    <div class="content">
+        
+        <p>This post is pretty dense, and you don't need to read and understand all of it
+to get started with a solar installation. If you're just getting started, you
+can probably skip this post and refer back to it later. Feel free to jump ahead!</p>
+
+    </div>
+</blockquote><blockquote class="callout warning">
+    
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12.865 3.00017L22.3912 19.5002C22.6674 19.9785 22.5035 20.5901 22.0252 20.8662C21.8732 20.954 21.7008 21.0002 21.5252 21.0002H2.47266C1.92037 21.0002 1.47266 20.5525 1.47266 20.0002C1.47266 19.8246 1.51886 19.6522 1.60663 19.5002L11.1329 3.00017C11.4091 2.52187 12.0206 2.358 12.4989 2.63414C12.651 2.72191 12.7772 2.84815 12.865 3.00017ZM4.20471 19.0002H19.7932L11.9989 5.50017L4.20471 19.0002ZM10.9989 16.0002H12.9989V18.0002H10.9989V16.0002ZM10.9989 9.00017H12.9989V14.0002H10.9989V9.00017Z" fill="currentColor"></path></svg>
+    </div>
+    <div class="content">
+        
+        <p>We're not electricians, and–despite having learned a lot during the course of
+this project–we're not experts in solar installations. This section is based on
+our understanding of the terms and concepts, and we're not responsible for any
+errors or omissions. If you're planning on installing a solar system, you
+should consult with a professional installer, electrician, and/or engineer.</p>
+<p>If you notice anything that's incorrect or missing, please
+<a href="/about/">let us know</a> so we can correct it.</p>
+
+    </div>
+</blockquote><h3 id="components-and-hardware">Components and Hardware<a class="zola-anchor" href="#components-and-hardware" aria-label="Anchor link for: components-and-hardware" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>
+<p><strong>Solar panels</strong>, sometimes called photovoltaic panels, or PV, are the
+components of the system that actually produce power. They have a variety of
+properties that are important when designing a system, and we'll cover more
+about them in a later post.</p>
+</li>
+<li>
+<p><strong>Optimizers/rapid shutdown devices</strong> are devices that attach to a solar
+panel (or are integrated into the panel) that are used when not using a
+microinverter-based system. Per code in Ontario, all solar systems must have
+a so-called "rapid shutdown", sometimes abbreviated RSD, that allows the
+system to be shut down in case of a fire or other emergency. Some RSDs also
+have the ability to optimize the power output at a per-panel level to reduce
+the impact of shade. Microinverters will provide rapid shutdown functionality
+when those are being used, and thus a separate device is not required.</p>
+</li>
+<li>
+<p><strong>Inverter</strong> is the component that converts the DC power produced by the
+solar panels (or batteries) into AC power that can be used by your house, or
+exported to the rest of the power grid.</p>
+<ul>
+<li>For inverters that support battery storage, they can typically also
+charge the battery by drawing AC power from the grid. These are sometimes
+called "inverter-chargers".</li>
+<li>There are two major types of inverters in use in residential
+installations today: microinverters vs. string inverters. We'll go into
+more detail in a later post, but broadly speaking, a microinverter is a
+small inverter that attaches to a single solar panel (or sometimes 2/4
+panels), while a string inverter is a larger inverter that attaches to
+multiple panels that are connected in series in a "string".</li>
+</ul>
+</li>
+<li>
+<p><strong>Batteries</strong> are the component(s) that stores power for use later. There are
+a variety of battery chemistries in use today, and we'll cover more about
+them in a later post. Broadly speaking, though, there are two types of
+battery systems:</p>
+<ul>
+<li>AC-coupled batteries (like the Tesla Powerwall) are connected to other
+components of the system and the power grid via an AC connection, and
+integrate an inverter-charger into the battery itself.</li>
+<li>DC-coupled batteries (similar to a lead-acid or AGM battery that you'd
+find in your car) are connected to the rest of the system via a DC
+connection, and require a separate inverter to convert the DC power to AC
+power and vice-versa. So-called "all-in-one" inverters typically provide
+both the DC-AC conversion to connect solar panels and the DC-to-AC or
+AC-to-DC conversion for a connected battery.</li>
+</ul>
+</li>
+<li>
+<p><strong>Balance of system</strong> refers to all the other components of the system that
+aren't the solar panels, inverters, or batteries. This includes things like
+wiring, fuses, breakers, junction boxes, disconnects, and so on.</p>
+</li>
+<li>
+<p><strong>Lamacoids</strong> are the labels that are required to be placed on certain
+components of the system, to either provide information about the component
+or system (e.g. a copy of the SLD, described below) or to display a warning,
+such as "Two Power Sources" or "Rapid Shutdown Switch".</p>
+<p>The word "lamacoid" is a trade name; the generic term for these is
+"nameplate", "legend plate", or "engraved plate". Typically, they are
+required to be weatherproof.</p>
+</li>
+</ul>
+<h3 id="parties">Parties<a class="zola-anchor" href="#parties" aria-label="Anchor link for: parties" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>
+<p>A <strong>Solar Installer</strong> is the company that installs the solar system. They're
+responsible for the design, permitting, installation, and commissioning of
+the system. They're also responsible for interfacing with the electrical
+utility and the Electrical Safety Authority (ESA) to get the necessary
+permits and inspections. They typically also provide a post-installation
+warranty and are responsible for any maintenance or troubleshooting that may
+be required.</p>
+</li>
+<li>
+<p><strong>Electrical Safety Authority</strong> (ESA) is the organization that is responsible
+for electrical safety in Ontario. They must be notified before any work is
+done, and will perform inspections and ensure that all electrical work is
+done to code.</p>
+</li>
+<li>
+<p>The <strong>Electrical Utility</strong> is the company that provides power to your house.
+They're responsible for the power grid, billing, and are the final arbiter of
+whether a solar installation can be connected to the power grid, and how
+large of an installation is allowed. Sometimes referred to as the "power
+utility", "power company", "hydro company", etc. Here in Ottawa, this is
+<a rel="nofollow noreferrer" href="https://hydroottawa.com/">Hydro Ottawa</a>; elsewhere in Ontario it's typically
+<a rel="nofollow noreferrer" href="https://www.hydroone.com/">Hydro One</a>.</p>
+<p>The phrase "supply authority" (e.g. as used by the ESA) can refer to the
+electrical utility as well, though it's more general than just the utility.</p>
+</li>
+<li>
+<p>A <strong>Professional Engineer</strong> (abbreviated P.Eng.) is a person who is licensed
+to practice engineering in the province of Ontario. Note that this is
+different from someone that has a degree in engineering; a P.Eng. is a person
+who has passed the professional engineering exam and has been granted a
+license by Professional Engineers Ontario. Certain aspects of the solar
+installation must be designed and stamped by a professional engineer.</p>
+</li>
+<li>
+<p>A <strong>Master Electrician</strong> is a person who is licensed to perform electrical
+work in the province of Ontario, by passing the master electrician exam
+administered by the ESA. They are responsible for the installation of the
+electrical components of the solar system, and are typically employed by the
+solar installer.</p>
+</li>
+<li>
+<p>A <strong>Licensed Electrical Contractor</strong> is a company that is allowed to perform
+electrical work in the province of Ontario. They employ electricians to
+perform the work.</p>
+</li>
+</ul>
+<blockquote class="callout note">
+    
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z" fill="currentColor"></path></svg>
+    </div>
+    <div class="content">
+        
+        <p>A professional engineer is very different from an electrician; an engineer is
+responsible for the design of the system, while an electrician is responsible
+for the installation. Unless a P.Eng. is also a licensed electrician, they
+cannot perform the installation themselves. Unless a licensed electrician is
+also a P.Eng., they cannot design a system that requires a P.Eng. stamp.</p>
+
+    </div>
+</blockquote><h3 id="planning-design-and-permits">Planning, Design, and Permits<a class="zola-anchor" href="#planning-design-and-permits" aria-label="Anchor link for: planning-design-and-permits" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>Single-line diagram</strong> (sometimes abbreviated as "SLD") is a diagram that
+shows the electrical connections between all the components of the system.
+This is a required document for the permit application and interconnection
+agreements with the electrical utility, and it's also a useful document to
+have when troubleshooting the system.</li>
+<li><strong>Permit</strong>, despite being a common term, is a bit of a misnomer in Ontario.
+To use the official terminology; you file a "notification of work" with the
+Electrical Safety Authority (ESA), where you specify the scope of the work
+that you're intending to do. The fees for these notifications are fairly
+complicated, but the ESA will walk you through the process on the phone. This
+is typically done by the solar installer.</li>
+<li><strong>Inspections</strong> are the process whereby an inspector from the ESA will come
+out to your house and inspect the work that was done. This is typically
+scheduled by the solar installer, and the inspector will check that the work
+was done to code and that it's safe. In Ontario, there are two kinds of
+inspections:
+<ul>
+<li><strong>Rough-in inspections</strong> are done before the system is energized, and
+checks that the wiring is done correctly, safety requirements are met,
+only approved components are used, etc. This inspection must be completed
+before the system is energized, and before any of the work completed is
+covered up (e.g. by drywall).</li>
+<li><strong>Final inspections</strong> are done after the system is completed, and must
+performed before the electrical utility will grant permission to connect
+to and feed power back to the grid. Upon completion of the final
+inspection, the ESA will issue a <strong>Certificate of Inspection</strong> that the
+utility will require a copy of.</li>
+</ul>
+</li>
+<li><strong>Connection Authorization</strong> is an approval from the ESA that the system is
+safe to connect to the power grid. This is typically required by the
+electrical utility before they will allow the system to be connected. The ESA
+will issue a "Connection Authorization Verification" certificate.</li>
+<li><strong>Distributed Energy Resources</strong>, often abbreviated "DER", is the term used
+by the electrical utility to refer to solar systems, battery storage, and
+other small-scale power generation systems. In Ontario, if your generation is
+a so-called "micro-generation" project, consisting of less than 10kW AC worth
+of generation capacity, then typically the utility will perform an
+abbreviated review of the system on a relatively short timeline and with
+minimal fees.</li>
+</ul>
+<blockquote class="callout important">
+    
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="currentColor"></path></svg>
+    </div>
+    <div class="content">
+        
+        <p>The electrical utility cares about the so-called "nameplate capacity" of any
+power generation, not what is theoretically possible in a given installation.
+So hypothetically, if you install a 20kW inverter, but only 8kW of solar
+panels, the utility will consider your system to be 20kW, and you'll be
+ineligible for the micro-generation program, even though your system is
+incapable of generating more than 8kW of power.</p>
+
+    </div>
+</blockquote>
+<ul>
+<li>
+<p><strong>Connection Impact Assessment</strong> (often abbreviated "CIA") is the name of a
+form that must be filled out and submitted to the electrical utility. This
+form is used by the utility to determine if the proposed solar system will
+have any impact on the grid, and if there is capacity to support the proposed
+amount of power generation. This form is typically filled out by the solar
+installer, and is typically not required for micro-generation projects under
+10kW AC of generation capacity.</p>
+<p>Another name for this is a "Distribution Connection Impact Assessment"
+(abbreviated DCIA).</p>
+</li>
+</ul>
+<blockquote class="callout note">
+    
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z" fill="currentColor"></path></svg>
+    </div>
+    <div class="content">
+        
+        <p>At least for Hydro Ottawa, the CIA application and drawings need to be stamped and
+signed by a professional engineer who is licensed in the province of Ontario
+and in good standing; this is a requirement regardless of who is performing the
+installation.</p>
+
+    </div>
+</blockquote><blockquote class="callout important">
+    
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="currentColor"></path></svg>
+    </div>
+    <div class="content">
+        
+        <p>The timeline for a CIA can be quite long, especially if the utility has to
+perform a detailed review of the system, or if they're backlogged with
+applications. In our case, the CIA was submitted on October 6, 2022 and was
+approved on November 29, 2022, but we've heard anecdotal reports of the process
+taking many months.</p>
+
+    </div>
+</blockquote>
+<ul>
+<li>An <strong>Electrical Operation and Maintenance Agreement</strong> (abbreviated EOMA) is a
+document that is signed by the homeowner and the electrical utility, that
+specifies the responsibilities of each. In our case (with Hydro Ottawa), this
+document specifies a collection of requirements, but more relevant to us,
+also include direct contact information for both the homeowner and the local
+system operator, in case either party needs to contact the other. While this
+hasn't come up so far from us, the agreement also states:</li>
+</ul>
+<blockquote class="quote">
+  
+  <div class="icon" style="display: none;"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  width="12" height="12" viewBox="796 698 200 200">
+<g>
+	<path d="M885.208,749.739v-40.948C836.019,708.791,796,748.81,796,798v89.209h89.208V798h-48.26
+		C836.948,771.39,858.598,749.739,885.208,749.739z"/>
+	<path d="M996,749.739v-40.948c-49.19,0-89.209,40.019-89.209,89.209v89.209H996V798h-48.26
+		C947.74,771.39,969.39,749.739,996,749.739z"/>
+</g>
+</svg></div>
+  <div class="content"><p>Each party’s Controlling Authority shall be available to each other on a 24/7
+basis. Unavailability of the Customer’s Controlling Authority may result in
+Hydro Ottawa’s Controlling Authority disconnecting the DER.</p>
+</div>
+  
+  <div class="from">
+    <p>— Hydro Ottawa EOMA</p>
+
+  </div>
+  
+</blockquote>
+<ul>
+<li><strong>Generation Connection Agreement</strong> (GCA) is another agreement that we signed
+with Hydro Ottawa.</li>
+</ul>
+<h3 id="other-terms">Other Terms<a class="zola-anchor" href="#other-terms" aria-label="Anchor link for: other-terms" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>
+<p><strong>Distributed Generation</strong> is the generic term used to refer to power
+generators that are connected to a distribution system.</p>
+</li>
+<li>
+<p><strong>Home-Run</strong> is a term used to refer to a run of electrical cable that goes
+directly from a single component to a central location, rather than daisy
+chaining components together. This is typically used to refer to the wiring
+from the end of a string of solar panels back to the inverter; panels are
+typically connected such that the positives are all in series,
+positive-to-negative, and then the final ends are connected to the inverter.</p>
+</li>
+</ul>
+<h2 id="up-next">Up Next<a class="zola-anchor" href="#up-next" aria-label="Anchor link for: up-next" style="visibility: hidden;"></a>
+</h2>
+<p>In the next part of this series, we'll cover how we found and chose our solar
+installer, and how we picked the specific components of our system. Stay tuned!</p>
+
+        
+      </article>
+
+      
+      
+    </div>
+
+    <footer>
+  <div class="copyright">
+    <p>© 2024 MakeNorth</p>
+
+  </div>
+  
+</footer>
+  </main>
+</div>
+
+  
+<script src="/js/lightense.min.js"></script>
+
+
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
