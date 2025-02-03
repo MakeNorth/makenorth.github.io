@@ -125,7 +125,12 @@ documents to see if there are any differences.
 ### Further Reading
 
 - [Data and Metadata Redaction](https://www.privacyguides.org/en/data-redaction/), from Privacy Guides
+- [This investigation of Pokemon cards][pokemon-playtest], that uses printer
+  dots to make the case that many supposedly early prototype Pokemon cards were
+  actually printed in 2024.
 - _more to come_
+
+[pokemon-playtest]: https://www.elitefourum.com/t/many-of-the-pokemon-playtest-cards-were-likely-printed-in-2024/52421
 
 ### Tools
 
